@@ -1,0 +1,25 @@
+name: shell
+
+on:
+  push:
+
+jobs:
+  buildx:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: use jdk
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt' # See https://github.com/actions/setup-java
+          java-version: '17'
+      - name: Available platforms
+        run: echo ${{ steps.buildx.outputs.platforms }};
+          java -version;
+          mvn -version;
+          ls /home/runner/work/docker/docker;
+      - name: exe_shell
+        run: pwd;
+          cd .;
+          bash ./shell.sh;
