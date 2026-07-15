@@ -18,7 +18,6 @@ jobs:
         run: echo ${{ steps.buildx.outputs.platforms }};
           java -version;
           mvn -version;
-          ls /home/runner/work/docker/docker;
       - name: exe_shell
         run: pwd;
           cd .;
